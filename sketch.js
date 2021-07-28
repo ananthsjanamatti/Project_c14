@@ -20,15 +20,7 @@ function preload(){
 function setup() {
   createCanvas(400, 400);
   
-  //creating background
-  scene = createSprite(0,0,400,400);
-  scene.addImage(backgroundImage);
-  scene.scale = 2.5
-  
-  // creating bow to shoot arrow
-  bow = createSprite(380,220,20,50);
-  bow.addImage(bowImage); 
-  bow.scale = 1;
+ 
   
    score = 0    
 }
@@ -36,14 +28,7 @@ function setup() {
 function draw() {
  background(0);
   // moving ground
-    scene.velocityX = -3 
-
-    if (scene.x < 0){
-      scene.x = scene.width/2;
-    }
   
-  //moving bow
-  bow.y = World.mouseY
   
    // release arrow when space key is pressed
   if (keyDown("space")) {
