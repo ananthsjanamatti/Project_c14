@@ -21,12 +21,12 @@ function setup() {
   createCanvas(400, 400);
   
   //creating background
- 
+ scene=createSprite(0,0,400,400)
   scene.addImage(backgroundImage);
   scene.scale = 2.5
   
   // creating bow to shoot arrow
-
+bow=createSprite(380,220,20,50)
   bow.addImage(bowImage); 
   bow.scale = 1;
   
