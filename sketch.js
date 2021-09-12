@@ -20,7 +20,15 @@ function preload(){
 function setup() {
   createCanvas(400, 400);
   
+  //creating background
  
+  scene.addImage(backgroundImage);
+  scene.scale = 2.5
+  
+  // creating bow to shoot arrow
+
+  bow.addImage(bowImage); 
+  bow.scale = 1;
   
    score = 0    
 }
@@ -28,7 +36,14 @@ function setup() {
 function draw() {
  background(0);
   // moving ground
+    scene.velocityX = -3 
+
+    if (scene.x < 0){
+      scene.x = scene.width/2;
+    }
   
+  //moving bow
+  bow.y = World.mouseY
   
    // release arrow when space key is pressed
   if (keyDown("space")) {
@@ -53,7 +68,6 @@ function draw() {
   }}
     
   drawSprites();
-  text("Score: "+ score, 300,50);
 }
 
 
@@ -98,4 +112,3 @@ function pinkBalloon() {
   pink.velocityX = 3;
   pink.lifetime = 150;
   pink.scale = 1
-}
